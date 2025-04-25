@@ -10,6 +10,8 @@ import com.seamusmullan.vapour.item.VapePenItem;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
 import java.util.function.Supplier;
@@ -18,33 +20,121 @@ public class ModItems {
     // Create a deferred register for items
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Vapour.MOD_ID, Registries.ITEM);
 
-    // Tobacco Products
-    public static final RegistrySupplier<Item> CIGARETTE = registerItem("cigarette", 
-            () -> new CigaretteItem(new Item.Properties().stacksTo(16)));
-    public static final RegistrySupplier<Item> TOBACCO_SEEDS = registerItem("tobacco_seeds",
-            () -> new CropSeedItem(ModBlocks.TOBACCO_CROP.get(), new Item.Properties()));
-    public static final RegistrySupplier<Item> TOBACCO_LEAF = registerItem("tobacco_leaf",
-            () -> new Item(new Item.Properties()));
-    public static final RegistrySupplier<Item> LIGHTER = registerItem("lighter",
-            () -> new LighterItem(new Item.Properties().durability(64)));
+    // Cigarette
+    public static final RegistrySupplier<Item> CIGARETTE = registerItem("cigarette", () -> {
+        ResourceKey<Item> key = ResourceKey.create(
+                Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(Vapour.MOD_ID, "cigarette")
+        );
+        Item.Properties props = new Item.Properties()
+                .stacksTo(16)
+                .setId(key);
+        return new CigaretteItem(props);
+    });
 
-    // Vaping Devices
-    public static final RegistrySupplier<Item> VAPE_PEN = registerItem("vape_pen",
-            () -> new VapePenItem(new Item.Properties().durability(100)));
-    public static final RegistrySupplier<Item> E_LIQUID = registerItem("e_liquid",
-            () -> new Item(new Item.Properties().stacksTo(16)));
+    // Tobacco Seeds
+    public static final RegistrySupplier<Item> TOBACCO_SEEDS = registerItem("tobacco_seeds", () -> {
+        ResourceKey<Item> key = ResourceKey.create(
+                Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(Vapour.MOD_ID, "tobacco_seeds")
+        );
+        Item.Properties props = new Item.Properties()
+                .setId(key);
+        return new CropSeedItem(ModBlocks.TOBACCO_CROP.get(), props);
+    });
 
-    // Cannabis Products
-    public static final RegistrySupplier<Item> CANNABIS_SEEDS = registerItem("cannabis_seeds",
-            () -> new CropSeedItem(ModBlocks.CANNABIS_CROP.get(), new Item.Properties()));
-    public static final RegistrySupplier<Item> CANNABIS_LEAF = registerItem("cannabis_leaf",
-            () -> new Item(new Item.Properties()));
-    public static final RegistrySupplier<Item> CART = registerItem("cart",
-            () -> new CartItem(new Item.Properties().durability(50)));
+    // Tobacco Leaf
+    public static final RegistrySupplier<Item> TOBACCO_LEAF = registerItem("tobacco_leaf", () -> {
+        ResourceKey<Item> key = ResourceKey.create(
+                Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(Vapour.MOD_ID, "tobacco_leaf")
+        );
+        Item.Properties props = new Item.Properties()
+                .setId(key);
+        return new Item(props);
+    });
 
-    // Energy Drinks
-    public static final RegistrySupplier<Item> ENERGY_DRINK = registerItem("energy_drink",
-            () -> new EnergyDrinkItem(new Item.Properties().stacksTo(16)));
+    // Lighter
+    public static final RegistrySupplier<Item> LIGHTER = registerItem("lighter", () -> {
+        ResourceKey<Item> key = ResourceKey.create(
+                Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(Vapour.MOD_ID, "lighter")
+        );
+        Item.Properties props = new Item.Properties()
+                .durability(64)
+                .setId(key);
+        return new LighterItem(props);
+    });
+
+    // Vape Pen
+    public static final RegistrySupplier<Item> VAPE_PEN = registerItem("vape_pen", () -> {
+        ResourceKey<Item> key = ResourceKey.create(
+                Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(Vapour.MOD_ID, "vape_pen")
+        );
+        Item.Properties props = new Item.Properties()
+                .durability(100)
+                .setId(key);
+        return new VapePenItem(props);
+    });
+
+    // E-Liquid
+    public static final RegistrySupplier<Item> E_LIQUID = registerItem("e_liquid", () -> {
+        ResourceKey<Item> key = ResourceKey.create(
+                Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(Vapour.MOD_ID, "e_liquid")
+        );
+        Item.Properties props = new Item.Properties()
+                .stacksTo(16)
+                .setId(key);
+        return new Item(props);
+    });
+
+    // Cannabis Seeds
+    public static final RegistrySupplier<Item> CANNABIS_SEEDS = registerItem("cannabis_seeds", () -> {
+        ResourceKey<Item> key = ResourceKey.create(
+                Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(Vapour.MOD_ID, "cannabis_seeds")
+        );
+        Item.Properties props = new Item.Properties()
+                .setId(key);
+        return new CropSeedItem(ModBlocks.CANNABIS_CROP.get(), props);
+    });
+
+    // Cannabis Leaf
+    public static final RegistrySupplier<Item> CANNABIS_LEAF = registerItem("cannabis_leaf", () -> {
+        ResourceKey<Item> key = ResourceKey.create(
+                Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(Vapour.MOD_ID, "cannabis_leaf")
+        );
+        Item.Properties props = new Item.Properties()
+                .setId(key);
+        return new Item(props);
+    });
+
+    // Cart
+    public static final RegistrySupplier<Item> CART = registerItem("cart", () -> {
+        ResourceKey<Item> key = ResourceKey.create(
+                Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(Vapour.MOD_ID, "cart")
+        );
+        Item.Properties props = new Item.Properties()
+                .durability(50)
+                .setId(key);
+        return new CartItem(props);
+    });
+
+    // Energy Drink
+    public static final RegistrySupplier<Item> ENERGY_DRINK = registerItem("energy_drink", () -> {
+        ResourceKey<Item> key = ResourceKey.create(
+                Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(Vapour.MOD_ID, "energy_drink")
+        );
+        Item.Properties props = new Item.Properties()
+                .stacksTo(16)
+                .setId(key);
+        return new EnergyDrinkItem(props);
+    });
 
     // Helper method to register items
     private static <T extends Item> RegistrySupplier<T> registerItem(String name, Supplier<T> itemSupplier) {

@@ -15,7 +15,7 @@ public class VapourEffects {
     public static List<MobEffectInstance> getCigaretteEffects() {
         List<MobEffectInstance> effects = new ArrayList<>();
         effects.add(new MobEffectInstance(MobEffects.RESISTANCE, 600, 0));
-        effects.add(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 400, 0));
+        effects.add(new MobEffectInstance(MobEffects.SLOWNESS, 400, 0));
         return effects;
     }
     
@@ -31,7 +31,7 @@ public class VapourEffects {
         List<MobEffectInstance> effects = new ArrayList<>();
         effects.add(new MobEffectInstance(MobEffects.HUNGER, 800, 0));
         effects.add(new MobEffectInstance(MobEffects.NIGHT_VISION, 1200, 0));
-        effects.add(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1000, 0));
+        effects.add(new MobEffectInstance(MobEffects.SLOWNESS, 1000, 0));
         return effects;
     }
     

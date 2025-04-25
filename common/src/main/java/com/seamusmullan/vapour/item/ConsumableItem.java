@@ -2,7 +2,7 @@ package com.seamusmullan.vapour.item;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder; // added import
+//import net.minecraft.world.InteractionResultHolder; // added import
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -36,17 +36,17 @@ public class ConsumableItem extends Item {
         }
         return InteractionResult.SUCCESS;
     }
-    
-    @Override
-    public InteractionResult use(Level level, Player player, InteractionHand hand) {
-        player.startUsingItem(hand);
-        return InteractionResultHolder.consume(player.getItemInHand(hand));
-    }
+//
+//    @Override
+//    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+//        player.startUsingItem(hand);
+//        return InteractionResultHolder.consume(player.getItemInHand(hand));
+//    }
 
-    @Override
-    public int getUseDuration(ItemStack stack) {
-        return useDuration;
-    }
+//    @Override
+//    public int getUseDuration(ItemStack stack) {
+//        return useDuration;
+//    }
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity livingEntity) {

@@ -15,15 +15,15 @@ public class ModCreativeTabs {
     );
 
     public static void register() {
-        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.CIGARETTE::get);
-        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.TOBACCO_SEEDS::get);
-        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.TOBACCO_LEAF::get);
-        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.LIGHTER::get);
-        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.VAPE_PEN::get);
-        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.E_LIQUID::get);
-        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.CANNABIS_SEEDS::get);
-        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.CANNABIS_LEAF::get);
-        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.CART::get);
-        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.ENERGY_DRINK::get);
+//        CreativeTabRegistry.append(VAPOUR_TAB, ModItems.CIGARETTE::get);
+//        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.TOBACCO_SEEDS::get);
+//        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.TOBACCO_LEAF::get);
+//        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.LIGHTER::get);
+//        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.VAPE_PEN::get);
+//        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.E_LIQUID::get);
+//        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.CANNABIS_SEEDS::get);
+//        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.CANNABIS_LEAF::get);
+//        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.CART::get);
+//        CreativeTabRegistry.append(() -> VAPOUR_TAB, ModItems.ENERGY_DRINK::get);
     }
 }
