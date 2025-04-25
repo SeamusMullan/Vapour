@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "vapour",
+  "version": "${version}",
+  "name": "Vapour",
+  "description": "",
+  "authors": [
+    ""
+  ],
+  "contact": {
+    "homepage": ""
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/vapour/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.seamusmullan.vapour.fabric.VapourFabric"
+    ],
+    "client": [
+      "com.seamusmullan.vapour.fabric.client.VapourFabricClient"
+    ]
+  },
+  "mixins": [
+    "vapour.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": "~1.21.5",
+    "java": ">=21",
+    "architectury": ">=16.1.4",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
