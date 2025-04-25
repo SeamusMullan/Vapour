@@ -1,6 +1,6 @@
 {
   "parent": "block/crop",
   "textures": {
-    "crop": "minecraft:block/wheat_stage1"
+    "crop": "vapour:block/tobacco_crop_stage1"
   }
 }

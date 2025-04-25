@@ -14,7 +14,13 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.function.Supplier;
 
 /**
@@ -81,5 +87,30 @@ public class CustomCropBlock extends CropBlock {
                 level.setBlock(pos, this.getStateForAge(age + 1), 2);
             }
         }
+    }
+    
+    @Override
+    public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
+        List<ItemStack> drops = new ArrayList<>();
+        int age = getAge(state);
+        
+        // Always drop at least one seed
+        drops.add(new ItemStack(seedItem.get()));
+        
+        // If the crop is fully grown, drop harvest and extra seeds
+        if (age >= getMaxAge()) {
+            // Add the harvest item
+            drops.add(new ItemStack(harvestItem.get()));
+            
+            // Add 0-3 extra seeds based on random
+            // Fix: Use a new RandomSource instead of trying to get it from the builder
+            RandomSource random = RandomSource.create();
+            int extraSeeds = random.nextInt(3) + 1; // 1 to 3 extra seeds
+            if (extraSeeds > 0) {
+                drops.add(new ItemStack(seedItem.get(), extraSeeds));
+            }
+        }
+        
+        return drops;
     }
 }
