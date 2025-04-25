@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "T",
+    "P"
+  ],
+  "key": {
+    "T": {
+      "item": "vapour:tobacco_leaf"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    }
+  },
+  "result": {
+    "item": "vapour:cigarette",
+    "count": 3
+  }
+}

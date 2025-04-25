@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I ",
+    "F#"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_nugget"
+    },
+    "F": {
+      "item": "minecraft:flint"
+    },
+    "#": {
+      "item": "minecraft:flint_and_steel"
+    }
+  },
+  "result": {
+    "item": "vapour:lighter",
+    "count": 1
+  }
+}
